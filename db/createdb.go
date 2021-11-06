@@ -41,7 +41,6 @@ func Create(dbName string, txFunc txwrapper.TxFunc) (*sql.DB, CloseFn, error) {
 	}
 
 	filename := file.Name()
-	defer os.Remove(filename)
 
 	if err := file.Close(); err != nil {
 		return nil, nil, fmt.Errorf("failed to close file, %w", err)
